@@ -197,35 +197,15 @@ export function SkillsSection() {
                   </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {category.separateBoxes ? (
-                    // Create separate boxes for each core concept
-                    category.skills.map((skill, index) => (
-                      <div
-                        key={skill}
-                        className="group rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 via-primary/8 to-accent/5 p-4 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/15 hover:-translate-y-1 transition-all duration-300"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="flex items-center justify-center size-8 rounded-lg bg-gradient-to-br from-primary/20 to-primary/30 text-primary group-hover:from-primary group-hover:to-accent group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
-                            <category.icon className="size-4" />
-                          </div>
-                          <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                            {skill}
-                          </h4>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    // Default badge rendering for other skills
-                    category.skills.map((skill) => (
-                      <Badge
-                        key={skill}
-                        variant="secondary"
-                        className="text-xs font-normal bg-primary/10 hover:bg-primary/25 hover:text-primary hover:scale-105 transition-all duration-200"
-                      >
-                        {skill}
-                      </Badge>
-                    ))
-                  )}
+                  {category.skills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="text-xs font-normal bg-primary/10 hover:bg-primary/25 hover:text-primary hover:scale-105 transition-all duration-200"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
               </div>
               </AnimateOnScroll>
